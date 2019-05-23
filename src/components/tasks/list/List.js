@@ -12,7 +12,6 @@ class List extends React.Component {
   }
   
   async checkTask(task) {
-    let form = {'task': {'done': 'true'}}
     await fetch(`http://localhost:3001/tasks/${task.id}`,
       {
         method: 'PUT',

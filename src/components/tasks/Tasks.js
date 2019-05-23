@@ -1,7 +1,9 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import List from './list/List';
+import CreateTask from './create_tasks/CreateTasks';
 
 class Tasks extends React.Component {
   constructor(props) {
@@ -28,6 +30,7 @@ class Tasks extends React.Component {
         <Col xs={{ span: 8, offset: 2 }} className="tasks_list">
           <p className="title">To-do</p>
           <List loadTasks={this.loadTasks} tasks={this.state.tasks.filter(task => task.done === false)} />
+          <CreateTask loadTasks={this.loadTasks} />
         </Col>
         <Col xs={{ span: 8, offset: 2 }} className="tasks_list">
           <p className="title">Done</p>
