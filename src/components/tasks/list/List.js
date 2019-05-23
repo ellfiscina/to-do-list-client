@@ -11,6 +11,24 @@ class List extends React.Component {
     } 
   }
   
+  async checkTask(task) {
+    let form = {'task': {'done': 'true'}}
+    await fetch(`http://localhost:3001/tasks/${task.id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          task: { done: true }
+        })
+      }
+    )
+
+    this.props.loadTasks();
+  }
+
   render() {
     return(
       <div>
@@ -25,7 +43,7 @@ class List extends React.Component {
                       <td>
                         {
                           task.done === false
-                          ? <a className="check" href="#">
+                          ? <a className="check" href="#" onClick={() => this.checkTask(task)}>
                             <FontAwesomeIcon icon="check-circle" />
                           </a>
                           : null
