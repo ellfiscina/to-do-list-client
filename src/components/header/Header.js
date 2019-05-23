@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class Header extends Component {
+class Header extends React.Component {
     render() {
         return(
             <div>
