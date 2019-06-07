@@ -8,7 +8,7 @@ class Header extends React.Component {
             <div>
                 <Navbar>
                     <Navbar.Brand>
-                        <FontAwesomeIcon icon="check-circle" size="lg" /> Task Finisher
+                        <FontAwesomeIcon icon="check-circle" size="lg" /> My To-do List
                     </Navbar.Brand>
                 </Navbar>
             </div>
